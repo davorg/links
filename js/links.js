@@ -6,7 +6,6 @@ $(document).ready( function() {
     $('#desc').text(data.desc);
 
     $.each(data.social, function( index, value ) {
-      console.log(value);
       let link = mk_social_link(value, data.handle);
       $('#social p').append(
         $('<a>').attr('href', link).append(
@@ -14,11 +13,10 @@ $(document).ready( function() {
         )
       );
     });
-    console.log($('#social p').html());
 
     $.each(data.links, function( index, value ) {
       $('#links ul').append(
-        $('<li>').append(
+        $('<li>').attr('class', 'list-group-item list-group-item-action').append(
           $('<a>').attr('href', value.link).append(value.title)
         )
       );
