@@ -56,7 +56,7 @@ sub mk_social_link ($social, $default_handle) {
   return $url;
 }
 
-sub social_icon ($social, $default_handle) {
+sub mk_social_icon ($social, $default_handle) {
   my $link = mk_social_link($social, $default_handle);
 
   return qq[<a href='$link'><i class='fa-brands fa-3x fa-$social->{service}'></i></a>];
