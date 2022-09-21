@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang-"en">
   <head>
+[% IF ga4 -%]
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KHXQ2SWP9P"></script>
     <script>
@@ -8,8 +9,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-KHXQ2SWP9P');
+      gtag('config', '[% ga4 %]');
     </script>
+[% END -%]
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/83d48be8cc.js" crossorigin="anonymous"></script>
@@ -17,25 +19,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>xxx</title>
+    <title>[% name %] / @[% handle %]</title>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <div class="container-fluid text-center">
       <header>
-        <div id="img"><img src=""></div>
+        <div id="img"><img src="/img/[% image %]"></div>
         <div id="name">
-          <h1 />
+          <h1>[% name %] / @[% handle %]</h1>
         </div>
-        <div id="desc" />
+        <div id="desc">[% desc %]</div>
       </header>
       <div id="social">
         <h2>Social</h2>
-        <p />
+        <p>
+[% FOR service IN social;
+     mk_social_icon(service, handle);
+   END -%]
+        </p>
       </div>
       <div id="links">
         <h2>Links</h2>
-        <ul class="list-group" />
+        <ul class="list-group">
+[% FOR link IN links;
+     mk_link(link);
+   END -%]
+        </ul>
       </div>
       <footer>
         Made by <a href="https://twitter.com/davorg">@davorg</a>.
