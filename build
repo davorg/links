@@ -16,7 +16,7 @@ my $tt = Template->new({
   INCLUDE_PATH => './src',
   OUTPUT_PATH  => './docs',
   VARIABLES => {
-    social_icon => \&social_icon,
+    mk_social_icon => \&mk_social_icon,
     mk_link => \&mk_link,
   },
 });
