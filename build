@@ -53,7 +53,11 @@ my $urls = {
   medium     => {
     url  => "https://XXXX.medium.com/",
     name => 'Medium',
-  }
+  },
+  reddit     => {
+    url  => "https://reddit.com/user/",
+    name => 'Reddit',
+  },
 };
 
 $tt->process('index.html.tt', $data, 'index.html')

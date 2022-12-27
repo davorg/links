@@ -19,6 +19,8 @@
     "service": "github"
   }, {
     "service": "medium"
+  }, {
+    "service": "reddit"
   }],
   "links": [{
     "title": "dev.to",
