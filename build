@@ -21,27 +21,51 @@ my $tt = Template->new({
   },
 });
 
+my $urls = {
+  facebook   => {
+    url  => "https://facebook.com/",
+    name => 'Facebook',
+  },
+  twitter    => {
+    url  => "https://twitter.com/",
+    name => 'Twitter',
+  },
+  instagram  => {
+    url  => "https://instagram.com/",
+    name => 'Instagram',
+  },
+  tiktok     => {
+    url  => "https://tiktok.com/@",
+    name => 'TikTok',
+  },
+  linkedin   => {
+    url  => "https://linkedin.com/in/",
+    name => 'LinkedIn',
+  },
+  substack   => {
+    url  => "https://XXXX.substack.com/",
+    name => 'Substack',
+  },
+  github     => {
+    url  => "https://github.com/",
+    name => 'GitHub',
+  },
+  medium     => {
+    url  => "https://XXXX.medium.com/",
+    name => 'Medium',
+  }
+};
+
 $tt->process('index.html.tt', $data, 'index.html')
   or die $tt->error;
 
 sub mk_social_link ($social, $default_handle) {
-  my $urls = {
-    facebook   => "https://facebook.com/",
-    twitter    => "https://twitter.com/",
-    instagram  => "https://instagram.com/",
-    tiktok     => "https://tiktok.com/@",
-    linkedin   => "https://linkedin.com/in/",
-    substack   => "https://XXXX.substack.com/",
-    github     => "https://github.com/",
-    medium     => "https://XXXX.medium.com/"
-  };
-
   my $handle = $social->{handle} // $default_handle;
 
   my $url;
 
   if (exists $urls->{$social->{service}}) {
-    $url = $urls->{$social->{service}};
+    $url = $urls->{$social->{service}}{url};
   } else {
     warn('Unknown social service: ', $social->{service});
     return;
@@ -59,7 +83,7 @@ sub mk_social_link ($social, $default_handle) {
 sub mk_social_icon ($social, $default_handle) {
   my $link = mk_social_link($social, $default_handle);
 
-  return qq[<a href='$link'><i class='fa-brands fa-3x fa-$social->{service}'></i></a>];
+  return qq[<a title='$urls->{$social->{service}}{name}' href='$link'><i class='fa-brands fa-3x fa-$social->{service}'></i></a>];
 }
 
 sub mk_link ($link) {
