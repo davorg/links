@@ -1,0 +1,53 @@
+name: Build and deploy site
+
+on:
+  push:
+    branchs:
+      - 'main '
+    paths:
+      - 'build'
+      - 'src/*'
+      - 'links.json'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create page
+        run: ./build
+
+      - name: Commit
+        run: |
+          git config --global --add safe.directory /__w/links/links
+          GIT_STATUS=$(git status --porcelain)
+          echo $GIT_STATUS
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add docs/
+          if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
+          if [ "$GIT_STATUS" != "" ]; then git push; fi
+
+      - name: Build pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
