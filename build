@@ -58,6 +58,10 @@ my $urls = {
     url  => "https://reddit.com/user/",
     name => 'Reddit',
   },
+  quora      => {
+    url  => "https://quora.com/profile/",
+    name => 'Quora',
+  },
 };
 
 $tt->process('index.html.tt', $data, 'index.html')
