@@ -62,6 +62,11 @@ my $urls = {
     url  => "https://quora.com/profile/",
     name => 'Quora',
   },
+  mastodon   => {
+    # Hmm...
+    url  => "https://fosstodon.org/@",
+    name => 'Mastodon',
+  },
 };
 
 $tt->process('index.html.tt', $data, 'index.html')

@@ -22,12 +22,18 @@
   }, {
     "service": "reddit"
   }, {
+    "service": "mastodon"
+  }, {
     "service": "quora",
     "handle": "Dave-Cross"
   }],
   "links": [{
     "title": "GitHub Actions Essentials",
     "link": "https://actions.davecross.co.uk/"
+  },
+  {
+    "title": "Threads account",
+    "link": "https://threads.net/@davorg"
   },
   {
     "title": "Books I've written",
