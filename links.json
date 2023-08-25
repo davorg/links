@@ -28,6 +28,10 @@
     "handle": "Dave-Cross"
   }],
   "links": [{
+    "title": "Royal Relations",
+    "link": "https://davorg.dev/royal_rels/"
+  },
+  {
     "title": "GitHub Actions Essentials",
     "link": "https://actions.davecross.co.uk/"
   },
