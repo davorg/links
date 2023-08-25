@@ -7,6 +7,7 @@ on:
     paths:
       - 'build'
       - 'src/*'
+      - 'docs/**'
       - 'links.json'
   workflow_dispatch:
 
