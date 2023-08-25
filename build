@@ -67,6 +67,10 @@ my $urls = {
     url  => "https://fosstodon.org/@",
     name => 'Mastodon',
   },
+  threads    => {
+    url  => "https://www.threads.net/@",
+    name => 'Threads',
+  },
 };
 
 $tt->process('index.html.tt', $data, 'index.html')
