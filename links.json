@@ -30,6 +30,10 @@
     "handle": "Dave-Cross"
   }],
   "links": [{
+    "title": "George and the Smart Home",
+    "link": "https://george.davecross.co.uk/"
+  },
+  {
     "title": "Royal Relations",
     "link": "https://davorg.dev/royal_rels/"
   },
