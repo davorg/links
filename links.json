@@ -28,6 +28,8 @@
   }, {
     "service": "quora",
     "handle": "Dave-Cross"
+  }, {
+    "service": "bluesky"
   }],
   "links": [{
     "title": "George and the Smart Home",
