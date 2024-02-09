@@ -8,6 +8,7 @@ no warnings 'experimental::signatures';
 use Template;
 use JSON;
 use Path::Tiny;
+use File::Find;
 
 my $json = path('links.json')->slurp;
 my $data = JSON->new->decode($json);
@@ -72,10 +73,12 @@ my $urls = {
     name => 'Threads',
   },
   bluesky   => {
-    url  => 'https://bsky.app/profile/XXXX.bsky.social',
+    url  => 'https://bsky.app/profile/',
     name => 'Bluesky',
   },
 };
+
+find( sub { say $File::Find::name if -f }, 'src');
 
 $tt->process('index.html.tt', $data, 'index.html')
   or die $tt->error;
