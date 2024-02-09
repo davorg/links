@@ -72,7 +72,7 @@ my $urls = {
     name => 'Threads',
   },
   bluesky   => {
-    url  => 'https://bsky.app/profile/XXXX.bsky.social',
+    url  => 'https://bsky.app/profile/',
     name => 'Bluesky',
   },
 };

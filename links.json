@@ -29,7 +29,8 @@
     "service": "quora",
     "handle": "Dave-Cross"
   }, {
-    "service": "bluesky"
+    "service": "bluesky",
+    "handle" : "@davorg.davecross.co.uk"
   }],
   "links": [{
     "title": "George and the Smart Home",
