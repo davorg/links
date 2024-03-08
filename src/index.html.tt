@@ -35,7 +35,7 @@
         <h2>Social</h2>
         <p>
 [% FOR service IN social;
-     mk_social_icon(service, handle);
+     mk_social_icon(service, urls, handle);
    END -%]
         </p>
       </div>
