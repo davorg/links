@@ -25,6 +25,8 @@ jobs:
           sudo cpanm Template JSON Path::Tiny
 
       - name: Create page
+        env:
+          PERL5LIB: ./lib
         run: ./build
 
       - name: Commit
