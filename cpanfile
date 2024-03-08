@@ -4,4 +4,4 @@ requires 'JSON';
 requires 'Path::Tiny';
 requires 'File::Find';
 requires 'File::Basename';
-requires 'FindBin '$Bin'';
+requires 'FindBin';
