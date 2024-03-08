@@ -22,7 +22,7 @@ jobs:
       - name: Install libraries
         run: |
           sudo apt-get update && sudo apt-get -y install cpanminus
-          sudo cpanm Template JSON Path::Tiny
+          sudo cpanm --installdeps .
 
       - name: Create page
         env:
