@@ -8,13 +8,19 @@ no warnings 'experimental::signatures';
 use Template;
 use JSON;
 use Path::Tiny;
+use File::Find;
+use File::Basename;
+use FindBin '$Bin';
 
 my $json = path('links.json')->slurp;
 my $data = JSON->new->decode($json);
 
+my $src = 'src';
+my $out = 'docs';
+
 my $tt = Template->new({
-  INCLUDE_PATH => './src',
-  OUTPUT_PATH  => './docs',
+  INCLUDE_PATH => "$Bin/$src",
+  OUTPUT_PATH  => "$Bin/$out",
   VARIABLES => {
     mk_social_icon => \&mk_social_icon,
     mk_link => \&mk_link,
@@ -77,8 +83,32 @@ my $urls = {
   },
 };
 
-$tt->process('index.html.tt', $data, 'index.html')
-  or die $tt->error;
+find( \&do_this, $src);
+
+sub do_this {
+  my $path = $File::Find::name =~ s|^$src/||r;
+
+  if (/\.tt$/) {
+    debug("Process $path to", basename($path, '.tt'));
+    $tt->process($path, $data, basename($path, '.tt'))
+      or die $tt->error;
+  } else {
+    if (-d) {
+      debug("Make directory $path");
+      path("$Bin/$out/$path")->mkdir;
+    } elsif (-f) {
+      debug("Copy $path");
+      path("$Bin/$src/$path")->copy("$Bin/$out/$path");
+    } else {
+      debug("Confused by $File::Find::name");
+    }
+  }
+}
+
+sub debug {
+  warn "@_\n" if $ENV{LINKS_DEBUG};
+}
+
 
 sub mk_social_link ($social, $default_handle) {
   my $handle = $social->{handle} // $default_handle;
