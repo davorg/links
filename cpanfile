@@ -1,7 +1,7 @@
 requires 'Feature::Compat::Class';
-requires 'Template';
-requires 'JSON';
-requires 'Path::Tiny';
-requires 'File::Find';
 requires 'File::Basename';
+requires 'File::Find';
 requires 'FindBin';
+requires 'JSON';
+requires 'Path::Tiny', '0.125';
+requires 'Template';
