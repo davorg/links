@@ -10,13 +10,17 @@ use JSON;
 use Path::Tiny;
 use File::Find;
 use File::Basename;
+use FindBin '$Bin';
 
 my $json = path('links.json')->slurp;
 my $data = JSON->new->decode($json);
 
+my $src = 'src';
+my $out = 'docs';
+
 my $tt = Template->new({
-  INCLUDE_PATH => './src',
-  OUTPUT_PATH  => './docs',
+  INCLUDE_PATH => "$Bin/$src",
+  OUTPUT_PATH  => "$Bin/$out",
   VARIABLES => {
     mk_social_icon => \&mk_social_icon,
     mk_link => \&mk_link,
@@ -79,24 +83,32 @@ my $urls = {
   },
 };
 
-find( \&do_this, 'src');
+find( \&do_this, $src);
 
 sub do_this {
+  my $path = $File::Find::name =~ s|^$src/||r;
+
   if (/\.tt$/) {
-    say "Process $_ to ", basename $_, '.tt';
+    debug("Process $path to", basename($path, '.tt'));
+    $tt->process($path, $data, basename($path, '.tt'))
+      or die $tt->error;
   } else {
     if (-d) {
-      say "Make directory $File::Find::name";
+      debug("Make directory $path");
+      path("$Bin/$out/$path")->mkdir;
     } elsif (-f) {
-      say "Copy $File::Find::name";
+      debug("Copy $path");
+      path("$Bin/$src/$path")->copy("$Bin/$out/$path");
     } else {
-      say "Confused by $File::Find::name";
+      debug("Confused by $File::Find::name");
     }
   }
 }
 
-$tt->process('index.html.tt', $data, 'index.html')
-  or die $tt->error;
+sub debug {
+  warn "@_\n" if $ENV{LINKS_DEBUG};
+}
+
 
 sub mk_social_link ($social, $default_handle) {
   my $handle = $social->{handle} // $default_handle;
