@@ -68,8 +68,6 @@ class Links::App {
   }
 
   method run {
-use Data::Printer;
-p $self;
     find( sub { $self->do_this }, $src);
   }
 
