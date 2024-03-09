@@ -35,24 +35,19 @@
   "links": [{
     "title": "George and the Smart Home",
     "link": "https://george.davecross.co.uk/"
-  },
-  {
+  }, {
     "title": "GitHub Actions Essentials",
     "link": "https://actions.davecross.co.uk/"
-  },
-  {
+  }, {
     "title" : "Redbubble shop",
     "link": "https://www.redbubble.com/people/davorg/"
-  },
-  {
+  }, {
     "title": "Books I've written",
     "link": "https://davecross.co.uk/books/"
-  },
-  {
+  }, {
     "title": "Royal Relations",
     "link": "https://davorg.dev/royal_rels/"
-  },
-  {
+  }, {
     "title": "dev.to",
     "link": "https://dev.to/davorg"
   }, {
