@@ -6,8 +6,7 @@ on:
       - 'main'
     paths:
       - 'build'
-      - 'src/*'
-      - 'docs/**'
+      - 'src/**'
       - 'links.json'
   workflow_dispatch:
 
@@ -19,26 +18,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install libraries
+      - name: Install cpanm
         run: |
           sudo apt-get update && sudo apt-get -y install cpanminus
+
+      - name: Install CPAN modules
           sudo cpanm --installdeps .
 
       - name: Create page
         env:
           PERL5LIB: ./lib
         run: ./build
-
-      - name: Commit
-        run: |
-          git config --global --add safe.directory /__w/links/links
-          GIT_STATUS=$(git status --porcelain)
-          echo $GIT_STATUS
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add docs/
-          if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
-          if [ "$GIT_STATUS" != "" ]; then git push; fi
 
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
