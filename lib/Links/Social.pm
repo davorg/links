@@ -68,9 +68,7 @@ class Links::Social {
   method service { return $service }
   method handle { return $handle }
 
-  method mk_social_link ($default_handle) {
-    my $handle = $handle // $default_handle;
-
+  method mk_social_link {
     my $url;
 
     if (exists $urls->{$service}) {
@@ -89,8 +87,8 @@ class Links::Social {
     return $url;
   }
 
-  method mk_social_icon ($default_handle) {
-    my $link = $self->mk_social_link($default_handle);
+  method mk_social_icon {
+    my $link = $self->mk_social_link();
 
     return q[<a title='] . $urls->{$self->service}{name} .
       qq[' href='$link'><i class='fa-brands fa-3x fa-] . $self->service . q['></i></a>];

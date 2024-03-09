@@ -21,6 +21,9 @@
 
     <title>[% data.name %] / @[% data.handle %]</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script type="application/ld+json">
+[% data.json_ld %]
+    </script>
   </head>
   <body>
     <div class="container-fluid text-center">
