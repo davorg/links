@@ -26,6 +26,7 @@ class Links {
       name => $self->name,
       image => $self->image,
       sameAs => [ map { $_->mk_social_link } $self->socials->@* ],
+      relatedLink => [ map { $_->link } $self->links->@* ],
     };
 
     return JSON->new->pretty->encode($json);
