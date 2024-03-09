@@ -34,37 +34,39 @@
   }],
   "links": [{
     "title": "George and the Smart Home",
+    "subtitle" : "A children's book",
     "link": "https://george.davecross.co.uk/"
   }, {
     "title": "GitHub Actions Essentials",
     "link": "https://actions.davecross.co.uk/"
   }, {
     "title" : "Redbubble shop",
+    "subtitle" : "T-shirts and stuff",
     "link": "https://www.redbubble.com/people/davorg/"
   }, {
     "title": "Books I've written",
     "link": "https://davecross.co.uk/books/"
   }, {
     "title": "Royal Relations",
-    "link": "https://davorg.dev/royal_rels/"
+    "link": "https://rels.lineofsuccession.co.uk/"
   }, {
     "title": "dev.to",
+    "subtitle": "A developer's blog",
     "link": "https://dev.to/davorg"
   }, {
     "title": "Web site",
     "link": "https://davecross.co.uk/"
   }, {
     "title": "Perl Hacks",
+    "subtitle": "Stuff about Perl",
     "link": "https://perlhacks.com/"
   }, {
     "title": "Substack",
+    "subtitle": "An infrequent newsletter",
     "link": "https://davecross.substack.com/"
   }, {
     "title": "Blog",
     "link": "https://blog.dave.org.uk/"
-  }, {
-    "title": "AI headshots",
-    "link": "https://headshorts.davecross.co.uk/"
   }, {
     "title": "Email",
     "link": "mailto:dave@davecross.co.uk"
