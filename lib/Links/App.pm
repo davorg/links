@@ -14,81 +14,62 @@ class Links::App {
   use File::Basename;
   use FindBin '$Bin';
 
-  sub init_data {
-    my $json = path('links.json')->slurp;
-    return JSON->new->decode($json);
-  };
+  use Links;
+  use Links::Link;
+  use Links::Social;
 
   field $src  = 'src';
   field $out  = 'docs';
-  field $data = init_data();
+  field $ga4;
+  field $font_awesome_kit;
+  field $link_object;
 
-  field $urls = {
-    facebook   => {
-      url  => "https://facebook.com/",
-      name => 'Facebook',
-    },
-    twitter    => {
-      url  => "https://twitter.com/",
-      name => 'Twitter',
-    },
-    instagram  => {
-      url  => "https://instagram.com/",
-      name => 'Instagram',
-    },
-    tiktok     => {
-      url  => "https://tiktok.com/@",
-      name => 'TikTok',
-    },
-    linkedin   => {
-      url  => "https://linkedin.com/in/",
-      name => 'LinkedIn',
-    },
-    substack   => {
-      url  => "https://XXXX.substack.com/",
-      name => 'Substack',
-    },
-    github     => {
-      url  => "https://github.com/",
-      name => 'GitHub',
-    },
-    medium     => {
-      url  => "https://XXXX.medium.com/",
-      name => 'Medium',
-    },
-    reddit     => {
-      url  => "https://reddit.com/user/",
-      name => 'Reddit',
-    },
-    quora      => {
-      url  => "https://quora.com/profile/",
-      name => 'Quora',
-    },
-    mastodon   => {
-      # Hmm...
-      url  => "https://fosstodon.org/@",
-      name => 'Mastodon',
-    },
-    threads    => {
-      url  => "https://www.threads.net/@",
-      name => 'Threads',
-    },
-    bluesky   => {
-      url  => 'https://bsky.app/profile/',
-      name => 'Bluesky',
-    },
-  };
+  method src { return $src }
+  method out { return $out }
+  method ga4 { return $ga4 }
+  method font_awesome_kit { return $font_awesome_kit }
+  method link_object { return $link_object }
 
-  field $tt = Template->new({
-    INCLUDE_PATH => "$Bin/$src",
-    OUTPUT_PATH  => "$Bin/$out",
-    VARIABLES    => {
-      mk_social_icon => \&mk_social_icon,
-      mk_link        => \&mk_link,
-      urls           => $urls,
-    },
-  });
+  field $tt;
+
+  ADJUST {
+    my $json = path('links.json')->slurp;
+    my $data = JSON->new->decode($json);
+
+    $ga4 = $data->{ga4} // '';
+    $font_awesome_kit = $data->{font_awesome_kit} // '';
+
+    $tt = Template->new({
+      INCLUDE_PATH => "$Bin/$src",
+      OUTPUT_PATH  => "$Bin/$out",
+      VARIABLES    => {
+        mk_social_icon => \&mk_social_icon,
+        mk_link        => \&mk_link,
+        ga4            => $ga4,
+        font_awesome_kit => $font_awesome_kit,
+      }
+    });
+
+    my $socials = [ map {
+      $_->{handle} //= $data->{handle};
+      Links::Social->new(%$_)
+    } $data->{social}->@* ];
+
+    my $links = [ map { Links::Link->new(%$_) } $data->{links}->@* ];
+
+    $link_object = Links->new(
+      name    => $data->{name},
+      handle  => $data->{handle},
+      image   => $data->{image},
+      desc    => $data->{desc},
+      socials => $socials,
+      links   => $links,
+    );
+  }
+
   method run {
+use Data::Printer;
+p $self;
     find( sub { $self->do_this }, $src);
   }
 
@@ -97,7 +78,7 @@ class Links::App {
 
     if (/\.tt$/) {
       debug("Process $path to", basename($path, '.tt'));
-      $tt->process($path, $data, basename($path, '.tt'))
+      $tt->process($path, { data => $self->link_object }, basename($path, '.tt'))
         or die $tt->error;
     } else {
       if (-d) {
@@ -114,37 +95,6 @@ class Links::App {
 
   sub debug {
     warn "@_\n" if $ENV{LINKS_DEBUG};
-  }
-
-  sub mk_social_link ($social, $urls, $default_handle) {
-    my $handle = $social->{handle} // $default_handle;
-
-    my $url;
-
-    if (exists $urls->{$social->{service}}) {
-      $url = $urls->{$social->{service}}{url};
-    } else {
-      warn('Unknown social service: ', $social->{service});
-      return;
-    }
-
-    if ($url =~ /XXXX/) {
-      $url =~ s/XXXX/$handle/g;
-    } else {
-      $url .= $handle;
-    }
-
-    return $url;
-  }
-
-  sub mk_social_icon ($social, $urls, $default_handle) {
-    my $link = mk_social_link($social, $urls, $default_handle);
-
-    return qq[<a title='$urls->{$social->{service}}{name}' href='$link'><i class='fa-brands fa-3x fa-$social->{service}'></i></a>];
-  }
-
-  sub mk_link ($link) {
-    return qq[<li class='list-group-item list-group-item-action'><a href="$link->{link}">$link->{title}</a></li>];
   }
 }
 
