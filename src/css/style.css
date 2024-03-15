@@ -29,3 +29,7 @@ footer {
   border-top: solid 1px black;
   padding-bottom: 1em;
 }
+
+li a.text-decoration-none:hover {
+  text-decoration: underline;
+}
