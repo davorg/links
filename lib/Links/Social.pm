@@ -14,9 +14,10 @@ class Links::Social {
       url  => "https://facebook.com/",
       name => 'Facebook',
     },
-    twitter    => {
+    'x-twitter' => {
+      # This is currently still the correct URL
       url  => "https://twitter.com/",
-      name => 'Twitter',
+      name => 'X/Twitter',
     },
     instagram  => {
       url  => "https://instagram.com/",
