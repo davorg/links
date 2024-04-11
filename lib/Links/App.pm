@@ -62,6 +62,8 @@ class Links::App {
       handle  => $data->{handle},
       image   => $data->{image},
       desc    => $data->{desc},
+      og_image => $data->{og_image},
+      site_url => $data->{site_url},
       socials => $socials,
       links   => $links,
     );

@@ -7,11 +7,15 @@ class Links {
   field $handle :param;
   field $image :param;
   field $desc :param;
+  field $og_image :param;
+  field $site_url :param;
 
   method name { return $name }
   method handle { return $handle }
   method image { return $image }
   method desc { return $desc }
+  method og_image { return $og_image }
+  method site_url { return $site_url }
 
   field $socials :param = [];
   field $links :param = [];

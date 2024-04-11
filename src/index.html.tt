@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang-"en">
   <head>
+    <meta property="og:title" content="[% data.name %] / @[% data.handle %]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="[% data.site_url %]img/[% data.og_image %]" />
+    <meta property="og:url" content="[% data.site_url %]" />
 [% IF ga4 -%]
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KHXQ2SWP9P"></script>
