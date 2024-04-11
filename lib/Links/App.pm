@@ -43,8 +43,6 @@ class Links::App {
       INCLUDE_PATH => "$Bin/$src",
       OUTPUT_PATH  => "$Bin/$out",
       VARIABLES    => {
-        mk_social_icon => \&mk_social_icon,
-        mk_link        => \&mk_link,
         ga4            => $ga4,
         font_awesome_kit => $font_awesome_kit,
       }
