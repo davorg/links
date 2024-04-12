@@ -43,10 +43,6 @@
     "subtitle" : "A book for techies",
     "link": "https://actions.davecross.co.uk/"
   }, {
-    "title" : "Redbubble shop",
-    "subtitle" : "T-shirts and stuff",
-    "link": "https://www.redbubble.com/people/davorg/"
-  }, {
     "title": "Books I've written",
     "link": "https://davecross.co.uk/books/"
   }, {
@@ -72,6 +68,10 @@
     "title": "Line of Succession",
     "subtitle": "See the British line of succession on dates in the past",
     "link": "https://lineofsuccession.co.uk/"
+  }, {
+    "title" : "Redbubble shop",
+    "subtitle" : "T-shirts and stuff",
+    "link": "https://www.redbubble.com/people/davorg/"
   }, {
     "title": "Blog",
     "link": "https://blog.dave.org.uk/"
