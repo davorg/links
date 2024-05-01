@@ -35,6 +35,9 @@
     "handle" : "davorg.davecross.co.uk"
   }],
   "links": [{
+    "title": "GitHub Sponsor Page",
+    "link": "https://github.com/sponsors/davorg/"
+  }, {
     "title": "Talks",
     "subtitle" : "Various talks I've given (work in progress)",
     "link": "https://talks.davecross.co.uk/"
