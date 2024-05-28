@@ -1,11 +1,10 @@
 use Feature::Compat::Class;
 
 class Links::App {
-
   use strict;
   use warnings;
   use feature qw[say signatures];
-  no warnings 'experimental::signatures';
+  no warnings qw[experimental::signatures experimental::class];
 
   use Template;
   use JSON;
@@ -96,3 +95,4 @@ class Links::App {
   }
 }
 
+1;

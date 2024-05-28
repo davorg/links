@@ -28,6 +28,9 @@
   }, {
     "service": "threads"
   }, {
+    "service": "letterboxd",
+    "handle": "realdavorg"
+  }, {
     "service": "quora",
     "handle": "Dave-Cross"
   }, {

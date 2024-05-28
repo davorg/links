@@ -1,9 +1,10 @@
 use Feature::Compat::Class;
 
 class Links::Social {
-
+  use strict;
+  use warnings;
   use feature qw[say signatures];
-  no warnings 'experimental::signatures';
+  no warnings qw[experimental::signatures experimental::class];
 
   field $service :param;
   field $handle :param;
@@ -64,6 +65,10 @@ class Links::Social {
       url  => 'https://bsky.app/profile/',
       name => 'Bluesky',
     },
+    letterboxd => {
+      url  => 'https://letterboxd.com/',
+      name => 'Letterboxd',
+    },
   };
 
   method service { return $service }
@@ -95,3 +100,5 @@ class Links::Social {
       qq[' href='$link'><i class='fa-brands fa-3x fa-] . $self->service . q['></i></a>];
   }
 }
+
+1;

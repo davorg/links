@@ -1,6 +1,10 @@
 use Feature::Compat::Class;
 
 class Links {
+  use strict;
+  use warnings;
+  no warnings 'experimental::class';
+
   use JSON;
 
   field $name :param;
@@ -36,3 +40,5 @@ class Links {
     return JSON->new->pretty->encode($json);
   }
 }
+
+1;

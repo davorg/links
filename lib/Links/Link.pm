@@ -1,6 +1,10 @@
 use Feature::Compat::Class;
 
 class Links::Link {
+  use strict;
+  use warnings;
+  no warnings 'experimental::class';
+
   field $title :param;
   field $subtitle :param = '';
   field $link :param;
@@ -16,3 +20,5 @@ class Links::Link {
     return q[<li class='list-group-item list-group-item-action'>] . $a_tag . $subtitle . q[</li>];
   }
 }
+
+1;
