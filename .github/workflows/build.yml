@@ -9,6 +9,7 @@ on:
       - 'src/**'
       - 'links.json'
       - 'lib/**'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
 
 jobs:
