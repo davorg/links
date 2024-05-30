@@ -14,17 +14,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: perl:latest
+    container: davorg/links:latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install cpanm
-        run: apt-get update && apt-get -y install cpanminus
-
-      - name: Install CPAN modules
-        run: cpanm --installdeps .
 
       - name: Create page
         env:
