@@ -69,6 +69,10 @@ class Links::Social {
       url  => 'https://letterboxd.com/',
       name => 'Letterboxd',
     },
+    lastfm => {
+      url  => 'https://last.fm/user/',
+      name => 'last.fm',
+    },
   };
 
   method service { return $service }

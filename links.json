@@ -36,6 +36,8 @@
   }, {
     "service": "bluesky",
     "handle" : "davorg.davecross.co.uk"
+  }, {
+    "service": "lastfm"
   }],
   "links": [{
     "title": "It Came From Rockwell",
