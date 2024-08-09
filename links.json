@@ -40,6 +40,11 @@
     "service": "lastfm"
   }],
   "links": [{
+    "title": "Learn with Dave Cross",
+    "subtitle": "Upcoming training and seminars",
+    "link": "https://learn.davecross.co.uk/",
+    "new": 1
+  }, {
     "title": "It Came From Rockwell",
     "subtitle": "About the Rockwell Space Shuttle advert in OMNI #1",
     "link": "https://itcamefromrockwell.com/"
