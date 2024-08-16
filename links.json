@@ -8,32 +8,32 @@
   "ga4": "G-KHXQ2SWP9P",
   "font_awesome_kit": "83d48be8cc",
   "social": [{
+    "service": "github"
+  }, {
+    "service": "threads"
+  }, {
+    "service": "bluesky",
+    "handle" : "davorg.davecross.co.uk"
+  }, {
+    "service": "mastodon"
+  }, {
+    "service": "linkedin"
+  }, {
     "service": "facebook"
   }, {
     "service": "instagram"
   }, {
     "service": "tiktok"
   }, {
-    "service": "linkedin"
-  }, {
-    "service": "github"
-  }, {
     "service": "medium"
   }, {
     "service": "reddit"
-  }, {
-    "service": "mastodon"
-  }, {
-    "service": "threads"
   }, {
     "service": "letterboxd",
     "handle": "realdavorg"
   }, {
     "service": "quora",
     "handle": "Dave-Cross"
-  }, {
-    "service": "bluesky",
-    "handle" : "davorg.davecross.co.uk"
   }, {
     "service": "lastfm"
   }],
