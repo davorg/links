@@ -18,8 +18,17 @@ jobs:
     container: davorg/links:latest
 
     steps:
+      - name: Orientation
+        run: |
+          pwd
+          ls
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Orientation 2
+        run: |
+          pwd
+          ls
 
       - name: Create page
         env:
