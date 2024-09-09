@@ -1,9 +1,0 @@
-#!/usr/bin/env perl
-
-use strict;
-use warnings;
-
-use Links::App;
-
-Links::App->new->run;
-

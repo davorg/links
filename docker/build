@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# ver=`perl -nE '/\@v?([\d\.]+)/ and print $1 and exit' Dockerfile`
-# echo Building version $ver
-docker build -t davorg/links:latest -f docker/Dockerfile .
-docker push -a docker.io/davorg/links
