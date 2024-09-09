@@ -37,6 +37,9 @@ jobs:
         run: |
           mkdir docs
           /links/bin/linksite
+          pwd
+          ls
+          ls docs
 
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
