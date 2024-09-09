@@ -24,6 +24,7 @@ jobs:
       - name: Create page
         env:
           PERL5LIB: /links/lib
+          LINKSITE_DEBUG: 1
         run: |
           mkdir docs
           /links/bin/linksite
