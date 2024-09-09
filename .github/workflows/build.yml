@@ -23,8 +23,8 @@ jobs:
 
       - name: Create page
         env:
-          PERL5LIB: ./lib
-        run: ./build
+          PERL5LIB: /links/lib
+        run: /links/bin/linksite
 
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
