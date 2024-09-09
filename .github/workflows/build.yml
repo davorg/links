@@ -44,7 +44,7 @@ jobs:
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/
+          path: links/docs/
 
   deploy:
     needs: build
