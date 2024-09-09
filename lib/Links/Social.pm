@@ -8,7 +8,7 @@ class Links::Social {
 
   field $service :param;
   field $handle :param;
-  field $url :param;
+  field $url :param = undef;
 
   # TODO: This needs to be a class field.
   field $urls = {
