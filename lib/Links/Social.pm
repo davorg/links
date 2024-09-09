@@ -8,6 +8,7 @@ class Links::Social {
 
   field $service :param;
   field $handle :param;
+  field $url :param;
 
   # TODO: This needs to be a class field.
   field $urls = {
@@ -77,24 +78,27 @@ class Links::Social {
 
   method service { return $service }
   method handle { return $handle }
+  method url { return $url }
 
   method mk_social_link {
-    my $url;
+    my $social_url;
+
+    return $url if $url;
 
     if (exists $urls->{$service}) {
-      $url = $urls->{$service}{url};
+      $social_url = $urls->{$service}{url};
     } else {
       warn('Unknown social service: ', $service);
       return;
     }
 
-    if ($url =~ /XXXX/) {
-      $url =~ s/XXXX/$handle/g;
+    if ($social_url =~ /XXXX/) {
+      $social_url =~ s/XXXX/$handle/g;
     } else {
-      $url .= $handle;
+      $social_url .= $handle;
     }
 
-    return $url;
+    return $social_url;
   }
 
   method mk_social_icon {

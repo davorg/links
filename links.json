@@ -15,7 +15,8 @@
     "service": "bluesky",
     "handle" : "davorg.davecross.co.uk"
   }, {
-    "service": "mastodon"
+    "service": "mastodon",
+    "url": "https://fosstodon.org/@davorg"
   }, {
     "service": "linkedin"
   }, {
