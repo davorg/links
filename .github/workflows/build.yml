@@ -21,7 +21,9 @@ jobs:
       - name: Create page
         env:
           LINKSITE_DEBUG: 1
-        run: linksite
+        run: |
+          cd links
+          linksite
 
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
