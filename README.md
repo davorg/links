@@ -2,15 +2,11 @@
 
 Self-hosted Linktree clone
 
-A very simple thing that I threw together in an hour or so.
+The data file that builds my [links site](https://links.davecross.co.uk/).
 
-## The important files
+Most of the hard work is done by my
+[linksite](https://github.com/davorg-cpan/app-linksite) program.
 
-* [links.json](https://github.com/davorg/links/blob/main/links.json) defines the links
-* [index.html.tt](https://github.com/davorg/links/blob/main/src/index.html.tt) defines how the web page looks
-* [build](https://github.com/davorg/links/blob/main/build) actually turns the JSON into a web page
-* [build.yml](https://github.com/davorg/links/blob/main/.github/workflows/build.yml) defines a GitHub Actions workflow that rebuilds the site when I edit the inputs
-
-## Demo
-
-My links - https://links.davecross.co.uk/
+But you might be interested in the
+[GitHub Actions workflow](https://github.com/davorg/links/blob/main/.github/workflows/build.yml)
+that rebuilds the site automatically whenever the input data changes.
