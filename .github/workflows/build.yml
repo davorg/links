@@ -32,7 +32,6 @@ jobs:
         env:
           LINKSITE_DEBUG: 1
         run: |
-          cd links
           linksite
 
       - name: Build pages artifact
