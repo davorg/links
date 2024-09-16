@@ -7,6 +7,8 @@ on:
     paths:
       - 'links.json'
       - '.github/workflows/build.yml'
+      - 'CNAME'
+      - 'img/*'
   workflow_dispatch:
 
 jobs:
