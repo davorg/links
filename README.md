@@ -2,7 +2,8 @@
 
 Self-hosted Linktree clone
 
-The data file that builds my [links site](https://links.davecross.co.uk/).
+The [data file](https://github.com/davorg/links/blob/main/links.json)
+that builds my [links site](https://links.davecross.co.uk/).
 
 Most of the hard work is done by my
 [linksite](https://github.com/davorg-cpan/app-linksite) program.
