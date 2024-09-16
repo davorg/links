@@ -5,10 +5,7 @@ on:
     branchs:
       - 'main'
     paths:
-      - 'build'
-      - 'src/**'
       - 'links.json'
-      - 'lib/**'
       - '.github/workflows/build.yml'
   workflow_dispatch:
 
@@ -22,9 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create page
-        env:
-          PERL5LIB: ./lib
-        run: ./build
+        run: linksite
 
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
