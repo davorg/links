@@ -22,8 +22,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Debugging
+        run: |
+          pwd
+          ls
+
       - name: Create page
         run: linksite
+
+      - name: More debugging
+        run: |
+          find . -type f
 
       - name: Build pages artifact
         uses: actions/upload-pages-artifact@v3
