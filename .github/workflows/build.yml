@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: davorg/links:latest
+      image: davorg/links
       options: -user links
 
     steps:
