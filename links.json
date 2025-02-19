@@ -38,6 +38,13 @@
     "service": "lastfm"
   }],
   "links": [{
+    "title": "Professional website",
+    "subtitle": "A good place to start if you think you might need my services",
+    "link": "https://davecross.co.uk/"
+  }, {
+    "title": "Books I've written",
+    "link": "https://davecross.co.uk/books/"
+  }, {
     "title": "George and the Smart Home",
     "subtitle" : "A children's book",
     "link": "https://george.davecross.co.uk/"
@@ -45,9 +52,6 @@
     "title": "GitHub Actions Essentials",
     "subtitle" : "A book for techies",
     "link": "https://actions.davecross.co.uk/"
-  }, {
-    "title": "Books I've written",
-    "link": "https://davecross.co.uk/books/"
   }, {
     "title": "GitHub Sponsor Page",
     "link": "https://github.com/sponsors/davorg/"
@@ -63,9 +67,6 @@
     "title": "dev.to",
     "subtitle": "A developer's blog",
     "link": "https://dev.to/davorg"
-  }, {
-    "title": "Professional website",
-    "link": "https://davecross.co.uk/"
   }, {
     "title": "Perl Hacks",
     "subtitle": "Stuff about Perl",
