@@ -38,22 +38,6 @@
     "service": "lastfm"
   }],
   "links": [{
-    "title": "Learn with Dave Cross",
-    "subtitle": "Upcoming training and seminars",
-    "link": "https://learn.davecross.co.uk/",
-    "new": 1
-  }, {
-    "title": "It Came From Rockwell",
-    "subtitle": "About the Rockwell Space Shuttle advert in OMNI #1",
-    "link": "https://itcamefromrockwell.com/"
-  }, {
-    "title": "GitHub Sponsor Page",
-    "link": "https://github.com/sponsors/davorg/"
-  }, {
-    "title": "Talks",
-    "subtitle" : "Various talks I've given (work in progress)",
-    "link": "https://talks.davecross.co.uk/"
-  }, {
     "title": "George and the Smart Home",
     "subtitle" : "A children's book",
     "link": "https://george.davecross.co.uk/"
@@ -64,6 +48,13 @@
   }, {
     "title": "Books I've written",
     "link": "https://davecross.co.uk/books/"
+  }, {
+    "title": "GitHub Sponsor Page",
+    "link": "https://github.com/sponsors/davorg/"
+  }, {
+    "title": "Talks",
+    "subtitle" : "Various talks I've given (work in progress)",
+    "link": "https://talks.davecross.co.uk/"
   }, {
     "title": "Royal Relations",
     "subtitle" : "All one big happy family",
@@ -91,6 +82,14 @@
     "title" : "Redbubble shop",
     "subtitle" : "T-shirts and stuff",
     "link": "https://www.redbubble.com/people/davorg/"
+  }, {
+    "title": "Learn with Dave Cross",
+    "subtitle": "Upcoming training and seminars",
+    "link": "https://learn.davecross.co.uk/"
+  }, {
+    "title": "It Came From Rockwell",
+    "subtitle": "About the Rockwell Space Shuttle advert in OMNI #1",
+    "link": "https://itcamefromrockwell.com/"
   }, {
     "title": "Blog",
     "link": "https://blog.dave.org.uk/"
