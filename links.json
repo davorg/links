@@ -42,9 +42,18 @@
     "subtitle": "A good place to start if you think you might need my services",
     "link": "https://davecross.co.uk/"
   }, {
-    "title": "Etsy print store",
-    "link": "https://www.etsy.com/shop/printsfromdave",
+    "title": "Modern CSS Daily",
+    "subtitle": "A daily article about a modern CSS feature",
+    "link": "modern-css.davecross.co.uk/",
+    "new" : 1
+  }, {
+    "title": "What to Ask Your Website Company",
+    "subtitle": "Things to consider. Questions to ask. Red flags to avoid",
+    "link": "https://websiteguide.davecross.co.uk/",
     "new": 1
+  }, {
+    "title": "Etsy print store",
+    "link": "https://www.etsy.com/shop/printsfromdave"
   }, {
     "title": "Books I've written",
     "link": "https://davecross.co.uk/books/"
