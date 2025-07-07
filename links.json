@@ -42,6 +42,10 @@
     "subtitle": "A good place to start if you think you might need my services",
     "link": "https://davecross.co.uk/"
   }, {
+    "title": "One Thing at a Time",
+    "subtitle": "An infrequent Substack newsletter",
+    "link": "https://davecross.substack.com/"
+  }, {
     "title": "Modern CSS Daily",
     "subtitle": "A daily article about a modern CSS feature",
     "link": "modern-css.davecross.co.uk/",
@@ -84,10 +88,6 @@
     "title": "Perl Hacks",
     "subtitle": "Stuff about Perl",
     "link": "https://perlhacks.com/"
-  }, {
-    "title": "Substack",
-    "subtitle": "An infrequent newsletter",
-    "link": "https://davecross.substack.com/"
   }, {
     "title": "Line of Succession",
     "subtitle": "See the British line of succession on dates in the past",
