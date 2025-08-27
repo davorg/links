@@ -26,7 +26,7 @@ jobs:
         run: linksite
 
       - name: Build pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: docs/
 
