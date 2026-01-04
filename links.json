@@ -44,7 +44,8 @@
   }, {
     "title": "The Horsell Transmissions",
     "subtitle": "Recovered Martian bureaucratic transmissions: Earth invaded, forms filed, microbes prevailed.",
-    "link": "https://horsell.substack.com/"
+    "link": "https://horsell.substack.com/",
+    "new": 1
   }, {
     "title": "One Thing at a Time",
     "subtitle": "An infrequent Substack newsletter",
@@ -56,8 +57,7 @@
   }, {
     "title": "What to Ask Your Website Company",
     "subtitle": "Things to consider. Questions to ask. Red flags to avoid",
-    "link": "https://websiteguide.davecross.co.uk/",
-    "new": 1
+    "link": "https://websiteguide.davecross.co.uk/"
   }, {
     "title": "Etsy print store",
     "link": "https://www.etsy.com/shop/printsfromdave"
