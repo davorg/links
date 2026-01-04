@@ -42,14 +42,17 @@
     "subtitle": "A good place to start if you think you might need my services",
     "link": "https://davecross.co.uk/"
   }, {
+    "title": "The Horsell Transmissions",
+    "subtitle": "Recovered Martian bureaucratic transmissions: Earth invaded, forms filed, microbes prevailed.",
+    "link": "https://horsell.substack.com/"
+  }, {
     "title": "One Thing at a Time",
     "subtitle": "An infrequent Substack newsletter",
     "link": "https://davecross.substack.com/"
   }, {
     "title": "Modern CSS Daily",
     "subtitle": "A daily article about a modern CSS feature",
-    "link": "https://modern-css.davecross.co.uk/",
-    "new" : 1
+    "link": "https://modern-css.davecross.co.uk/"
   }, {
     "title": "What to Ask Your Website Company",
     "subtitle": "Things to consider. Questions to ask. Red flags to avoid",
