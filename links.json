@@ -60,7 +60,7 @@
     "links": [{
       "title": "One Thing at a Time",
       "subtitle": "An infrequent Substack newsletter",
-      "link": "https://davecross.substack.com/"
+      "link": "https://onething.davecross.co.uk/"
     }, {
       "title": "Perl Hacks",
       "subtitle": "Stuff about Perl",
@@ -72,8 +72,7 @@
     }, {
       "title": "The Horsell Transmissions",
       "subtitle": "Recovered Martian bureaucratic transmissions: Earth invaded, forms filed, microbes prevailed.",
-      "link": "https://horsell.substack.com/",
-      "new": 1
+      "link": "https://horsell.substack.com/"
     }]
   }],
   "links": [{
