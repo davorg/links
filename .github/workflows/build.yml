@@ -15,12 +15,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: davorg/links:latest
+      image: davorg/links:links_0.1.2
 
     steps:
 
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Confirm version of links
+        run: linksite -v
 
       - name: Create page
         run: linksite
